@@ -75,7 +75,7 @@ const MisericordiaModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                       </div>
                       <div className="space-y-1">
                         <p className="text-primary font-bold uppercase tracking-widest">Género</p>
-                        <p className="text-bone text-base md:text-lg font-display">Drama Psic / R. Mágico</p>
+                        <p className="text-bone text-base md:text-lg font-display">Drama Psicologico / Realismo Mágico</p>
                       </div>
                     </div>
 
@@ -97,7 +97,7 @@ const MisericordiaModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                   <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-white/5">
                     <video 
                       autoPlay loop muted playsInline
-                      className="absolute inset-0 w-full h-full object-cover grayscale brightness-50"
+                      className="absolute inset-0 w-full h-full object-cover brightness-50"
                       src="/videos/MisericordiaInesperada_001.mp4"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent"></div>
@@ -114,7 +114,7 @@ const MisericordiaModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 {/* Galería de Personajes Section inside Modal */}
                 <div className="space-y-12">
                   <div className="text-center space-y-2">
-                    <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase">El Elenco del Ritual</span>
+                    <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase">El Elenco de Misericordia Inesperada</span>
                     <h3 className="font-display text-3xl md:text-5xl text-bone">Galería de Personajes</h3>
                   </div>
 
@@ -218,7 +218,7 @@ export default function App() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] brightness-75 transition-transform duration-[3s] hover:scale-105"
-            src="/videos/MisericordiaInesperada_001.mp4"
+            src="https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8"
           />
 
           {/* Overlays */}
@@ -237,7 +237,7 @@ export default function App() {
                   text="REY BALAM"
                   showAsterisk
                   className="font-display font-black leading-[0.8] tracking-[-0.05em] text-primary"
-                  style={{ fontSize: "clamp(3.5rem, 18vw, 16rem)" } as any}
+                  style={{ fontSize: "clamp(3rem, 16vw, 14rem)" } as any}
                 />
                 <p className="font-display text-bone/40 text-[10px] md:text-sm tracking-[0.6em] mt-4 ml-2 uppercase">Productora Independiente</p>
               </div>
