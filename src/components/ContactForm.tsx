@@ -9,18 +9,33 @@ export const ContactForm = () => {
     e.preventDefault();
     setStatus("submitting");
 
-    // Simulación de envío - Aquí el usuario puede conectar su Webhook de Make.com
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
-    console.log("Datos capturados para automatización:", data);
+    try {
+      // Usaremos Formspree como solución gratuita y robusta para sitios estáticos
+      // El usuario debe reemplazar 'tu_form_id' con su ID real de Formspree despues de registrarse
+      const response = await fetch("https://formspree.io/f/tu_form_id", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    // Simulamos un delay de red
-    setTimeout(() => {
-      setStatus("success");
-      // Reset después de 3 segundos
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1500);
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Error al enviar:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (

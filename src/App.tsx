@@ -98,7 +98,7 @@ const MisericordiaModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                     <video 
                       autoPlay loop muted playsInline
                       className="absolute inset-0 w-full h-full object-cover grayscale brightness-50"
-                      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
+                      src="/videos/MisericordiaInesperada_001.mp4"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent"></div>
                     <div className="absolute bottom-8 left-8 right-8 space-y-4">
@@ -162,7 +162,7 @@ const Navbar = ({ onOpenObra }: { onOpenObra: () => void }) => {
   return (
     <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-fit pointer-events-auto">
       <div className="bg-void/90 backdrop-blur-md px-4 py-2 md:px-12 md:py-3 rounded-b-2xl md:rounded-b-[2rem] border-x border-b border-white/5 flex items-center gap-3 sm:gap-6 md:gap-14 lg:gap-16 shadow-2xl">
-        <img src="https://ais-pre-6xscki7b7cqzqqepyefy7z-702441002701.us-east1.run.app/IMAGE_2.png" alt="Balam" className="w-8 h-8 object-contain hidden md:block" />
+        <img src="/img/logo.png" alt="Rey Balam" className="w-10 h-10 object-contain hidden md:block" />
         {[
           { name: "Inicio", id: "#inicio" },
           { name: "La Obra", action: onOpenObra },
@@ -202,6 +202,12 @@ export default function App() {
       <Navbar onOpenObra={() => setIsModalOpen(true)} />
       <MisericordiaModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
+      {/* Membrete Institucional - Watermark/Header */}
+      <div className="fixed top-0 left-0 w-full h-32 pointer-events-none z-[60] opacity-10 md:opacity-20 flex justify-between px-10 pt-10">
+        <img src="/img/membrete.png" alt="" className="h-full object-contain" />
+        <img src="/img/membrete.png" alt="" className="h-full object-contain scale-x-[-1]" />
+      </div>
+
       {/* SECTION 1: HERO */}
       <section id="inicio" className="h-screen p-3 md:p-6 sticky top-0">
         <div className="relative h-full w-full rounded-2xl md:rounded-[2.5rem] overflow-hidden bg-void border border-white/5">
@@ -212,9 +218,7 @@ export default function App() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] brightness-75 transition-transform duration-[3s] hover:scale-105"
-            // Para activar tu video local, asegúrate de colocarlo en public/videos/ y descomenta la siguiente línea:
-            // src="/videos/MisericordiaInesperada_001.mp4"
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+            src="/videos/MisericordiaInesperada_001.mp4"
           />
 
           {/* Overlays */}
@@ -328,7 +332,7 @@ export default function App() {
               <video
                 autoPlay loop muted playsInline
                 className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-75"
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
+                src="/videos/MisericordiaInesperada_001.mp4"
               />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-primary font-display text-xl leading-tight">Tu génesis cinematográfico.</p>
@@ -434,6 +438,9 @@ export default function App() {
 
       {/* FOOTER - Minimal but stylized */}
       <footer className="bg-void border-t border-white/5 py-16 px-6 text-center">
+        <div className="flex justify-center mb-10">
+          <img src="/img/logo.png" alt="Logo Rey Balam" className="h-16 w-auto opacity-50 hover:opacity-100 transition-opacity" />
+        </div>
         <div className="mb-8 flex flex-col md:flex-row justify-center items-center gap-6 text-[10px] uppercase font-bold tracking-[0.2em] text-bone/40">
            <a href="#inicio" className="hover:text-primary transition-colors">Volver al Inicio</a>
            <button onClick={() => setIsModalOpen(true)} className="hover:text-primary transition-colors uppercase">La Obra</button>
